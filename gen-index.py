@@ -60,7 +60,7 @@ post = """
 </html>
 """
 
-template = '<a href="{pdf}" target="_blank"><img src="https://via.placeholder.com/200x282" alt="{ed}"></a>'
+template = '<a href="{pdf}" target="_blank"><img src="./img/{i}.png" alt="Title page of edition {i}"></a>'
 
 
 def generate_stubs():
@@ -68,7 +68,7 @@ def generate_stubs():
     for i in range(88 + 1,0,-1):
         pdf_file = f'./pdf/{i}.pdf'
         if os.path.isfile(pdf_file):
-            editions_html.append(template.format(pdf=pdf_file, ed=f'Edition {i}'))
+            editions_html.append(template.format(pdf=pdf_file, i=i))
     return '\n'.join(editions_html)
 
 # with index as open('index.html'):
