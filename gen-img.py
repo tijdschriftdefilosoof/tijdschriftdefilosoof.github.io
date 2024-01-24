@@ -1,5 +1,5 @@
 import os
-from pdf2image import conver_from_path
+from pdf2image import convert_from_path
 
 imgs = []
 for i in range(88 + 1, 0, -1):
