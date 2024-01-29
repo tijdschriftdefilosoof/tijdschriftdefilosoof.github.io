@@ -27,4 +27,4 @@ jobs:
 
     - name: Run Python script for template.html
       if: "contains(github.event.head_commit.message, 'template.html')"
-      run: python3 gen-index.py
+      run: python3 gen-index.py > index.html
