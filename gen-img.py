@@ -1,3 +1,4 @@
+#!/bin/env python3
 import os
 from pdf2image import convert_from_path
 MAX = 88
