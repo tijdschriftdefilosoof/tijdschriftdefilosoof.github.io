@@ -6,7 +6,7 @@ import highest
 MAX : int = highest.find_highest_numbered_pdf()
 
 imgs = []
-for i in range(MAX + 1, 0, -1):
+for i in range(MAX + 1):
     pdf_path = f'./pdf/{i}.pdf'
     img_path = f'./img/{i}.png'
     if not os.path.isfile(img_path):
