@@ -1,7 +1,9 @@
 #!/bin/env python3
 import os
 from pdf2image import convert_from_path
-MAX = 88
+
+import highest
+MAX : int = highest.find_highest_numbered_pdf()
 
 imgs = []
 for i in range(MAX + 1, 0, -1):

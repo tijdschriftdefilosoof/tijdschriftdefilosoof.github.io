@@ -1,7 +1,10 @@
 #!/bin/env python3
 import os
 import re
-MAX = 88
+import highest
+MAX :int = highest.find_highest_numbered_pdf()
+
+
 
 gallery_item = '<a href="{pdf}" target="_blank"><img src="./img/{i}.png" alt="Title page of edition {i}"></a>'
 
