@@ -4,6 +4,7 @@ A module to find the highest numbered PDF file in a directory.
 This module provides a function that scans a specific directory ('./pdf')
 for PDF files named with a natural number (like '1.pdf', '2.pdf', etc.),
 and finds the one with the highest number in its filename.
+It then returns that number.
 
 Dependencies:
     os: To interact with the file system.
