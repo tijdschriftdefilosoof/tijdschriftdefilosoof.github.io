@@ -1,5 +1,10 @@
 # Dit is de readme.md
-Tester de test. Hopelijk overschrijft dit niet de index.html voor de site. 
-
-Dit is een hele simpele site, er is een html pagina die gegenereerd wordt met een python script `gen-index,py`,
+Dit is een hele simpele site, er is één html pagina die gegenereerd wordt met een python script `gen-index,py`,
 die pagina verwijst naar een aantal bestanden die ook in dit repository staan. 
+
+Er zijn twee scripts, een script genereert de thumbnails voor de gallerij, door de voorpaginae uit de pdf's te halen.
+Deze worden opgeslagen in `./img` .
+Het andere script genereert een skelet voor de voorpagina, waar de gallerij dan in wordt gezet.
+
+# TODO: Automatische generatie
+Maak een Github Actions hook die automtisch de nieuwe site genereert, als er nieuwe pdf naar `./pdf` wordt geupload. 
