@@ -7,7 +7,7 @@ on:
       - 'pdf/[0-9]*.pdf'
 
 jobs:
-    extract-coverpages:
+    extract-coverpages-and-add-to-gallery:
         runs-on: ubuntu-latest
         steps:
         - name: "Checkout project"
@@ -25,19 +25,8 @@ jobs:
             pip install pdf2image # For extracting coverpages
     
         - name: "Extract coverpages run python script"
-          run: python3 extract-thumbnails.py
-            
-    add-new-thumbnails-to-gallery:
-        needs: extract-coverpages
-        runs-on: ubuntu-latest
-        steps:
-        - name: "Checkout project"
-          uses: actions/checkout@v4
-        - name: "Set up Python"
-          uses: actions/setup-python@v5
-    
-        - name: "Update index.html with new images."
           run: |
+            python3 extract-thumbnails.py
             echo "Updating index.html with new images."
             python3 generate-index.py
             
@@ -46,5 +35,5 @@ jobs:
             git config --local user.email "y@example.com"
             git config --local user.name "GitHub Action"
             git add index.html
-            git commit -m "[CI/CD] Update index.html with new images"
+            git commit -m "[CI/CD] Added new thumbnail to gallery"
             git push
