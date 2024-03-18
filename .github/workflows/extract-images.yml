@@ -51,7 +51,7 @@ jobs:
             
         - name: "Commit changes"
           run: |
-            git config --local user.email "
+            git config --local user.email "y@example.com"
             git config --local user.name "GitHub Action"
             git add index.html
             git commit -m "[CI/CD] Update index.html with new images"
