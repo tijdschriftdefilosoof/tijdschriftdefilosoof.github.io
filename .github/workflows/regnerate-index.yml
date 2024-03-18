@@ -10,20 +10,18 @@ jobs:
     update-index-html-from-template-html:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout project
-            uses: actions/checkout@v4
-        - name: Set up Python
-            uses: actions/setup-python@v4
-            with:
-            python-version: '3.x'
+        - name: "Checkout project"
+          uses: actions/checkout@v2
+        - name: "Set up Python"
+          uses: actions/setup-python@v2
     
-        - name: Update index.html from new template.html
-        run: |
+        - name: "Update index.html from new template.html"
+          run: |
             echo "Updating index.html from new template.html"
             python3 generate-index.py
-            
-        - name: Commit changes
-        run: |
+
+        - name: "Commit changes"
+          run: |
             git config --local user.email "
             git config --local user.name "GitHub Action"
             git add index.html
