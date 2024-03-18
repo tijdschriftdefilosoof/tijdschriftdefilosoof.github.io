@@ -26,14 +26,6 @@ jobs:
     
         - name: "Extract coverpages run python script"
           run: python3 extract-thumbnails.py
-
-        - name: "Commit and push changes"
-          run: |
-            git config --local user.email "x@example.com"
-            git config --local user.name "GitHub Action"
-            git add img
-            git commit -m "[CI/CD] Extract coverpages"
-            git push
             
     add-new-thumbnails-to-gallery:
         needs: extract-coverpages
