@@ -23,7 +23,7 @@ jobs:
             pip install pdf2image # For extracting coverpages
     
         - name: "Extract coverpages run python script"
-          run: python3 extract-humbnails.py
+          run: python3 extract-thumbnails.py
 
         - name: "Commit and push changes"
           run: |
