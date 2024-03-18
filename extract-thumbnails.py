@@ -9,6 +9,11 @@ imgs = []
 for i in range(MAX + 1):
     pdf_path = f'./pdf/{i}.pdf'
     img_path = f'./img/{i}.png'
+    # Remove an image file if it has no corresponding pdf,
+    # Assume it is a leftover artefact.
+    # The images should strictly supervene on the pdf's.
+    # This uses shortcircuiting.
+    os.path.isfile(img_path) and not os.path.isfile(pdf_path) and os.remove(img_path)
     if not os.path.isfile(img_path):
         if os.path.isfile(pdf_path):
             print("extracting from pdf: " + str(i))
