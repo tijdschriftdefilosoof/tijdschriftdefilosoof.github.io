@@ -2,7 +2,7 @@
 
 on:
   workflow_run:
-    workflows: extract_coverpages
+    workflows: extract-coverpages
     types:
       - completed.
 
