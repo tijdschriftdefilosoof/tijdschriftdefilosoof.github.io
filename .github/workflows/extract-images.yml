@@ -19,6 +19,8 @@ jobs:
           run: |
             echo "Installing and upgrading pip..."
             python -m pip install --upgrade pip
+            echo "installing poppler"
+            sudo apt-get install poppler-utils
             echo "Installing pdf2image..."
             pip install pdf2image # For extracting coverpages
     
