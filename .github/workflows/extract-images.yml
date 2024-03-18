@@ -34,6 +34,6 @@ jobs:
           run: |
             git config --local user.email "y@example.com"
             git config --local user.name "GitHub Action"
-            git add index.html
+            git add img index.html
             git commit -m "[CI/CD] Added new thumbnail to gallery"
             git push
