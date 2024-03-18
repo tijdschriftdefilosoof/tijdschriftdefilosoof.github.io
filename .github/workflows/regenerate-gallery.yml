@@ -1,9 +1,6 @@
 # Deze file zou de `index.html` aan moeten passen, als de nieuwe thumbnails geextraheerd zijn.
 
 on:
-  push:
-    paths:
-      - 'img/[0-9]*.png'
   workflow_run:
     workflows: extract_coverpages
     types:
