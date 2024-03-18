@@ -4,7 +4,7 @@ name: Update from 'template.html'
 on:
   push:
     paths:
-      - 'template.html'
+      - 'index.template.html'
 
 jobs:
     update-index-html-from-template-html:
