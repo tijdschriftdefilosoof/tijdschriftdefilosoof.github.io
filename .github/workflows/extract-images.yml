@@ -34,3 +34,25 @@ jobs:
             git add img
             git commit -m "[CI/CD] Extract coverpages"
             git push
+            
+    add-new-thumbnails-to-gallery:
+        needs: extract-coverpages
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Checkout project"
+          uses: actions/checkout@v4
+        - name: "Set up Python"
+          uses: actions/setup-python@v5
+    
+        - name: "Update index.html with new images."
+          run: |
+            echo "Updating index.html with new images."
+            python3 generate-index.py
+            
+        - name: "Commit changes"
+          run: |
+            git config --local user.email "
+            git config --local user.name "GitHub Action"
+            git add index.html
+            git commit -m "[CI/CD] Update index.html with new images"
+            git push
