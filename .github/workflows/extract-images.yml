@@ -1,0 +1,35 @@
+# Extract the coverpages from the pdfs in ./pdf, as images, save then in ./img, so that we can use them as thumbnails in the gallery in 'index.html'.
+name: extract_coverpages
+
+on:
+  push:
+    paths:
+      - 'pdf/[0-9]*.pdf'
+
+jobs:
+    extract-coverpages:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout project
+            uses: actions/checkout@v4
+        - name: Set up Python
+            uses: actions/setup-python@v4
+            with:
+            python-version: '3.x'
+        - name: Install dependencies
+            run: |
+            echo "Installing and upgrading pip..."
+            python -m pip install --upgrade pip
+            echo "Installing pdf2image..."
+            pip install pdf2image # For extracting coverpages
+    
+        - name: Extract coverpages run python script
+            run: python3 extract-humbnails.py
+
+        - name: Commit and push changes
+            run: |
+            git config --local user.email "
+            git config --local user.name "GitHub Action"
+            git add img
+            git commit -m "[CI/CD] Extract coverpages"
+            git push

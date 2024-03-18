@@ -1,0 +1,30 @@
+# Deze file zou de `index.html` aan moeten passen, als de nieuwe thumbnails geextraheerd zijn.
+
+on:
+  push:
+    paths:
+      - 'img/[0-9]*.png'
+
+jobs:
+    add-new-thumbnails-to-gallery:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout project
+            uses: actions/checkout@v4
+        - name: Set up Python
+            uses: actions/setup-python@v4
+            with:
+            python-version: '3.x'
+    
+        - name: Update index.html with new images.
+        run: |
+            echo "Updating index.html with new images."
+            python3 generate-index.py
+            
+        - name: Commit changes
+        run: |
+            git config --local user.email "
+            git config --local user.name "GitHub Action"
+            git add index.html
+            git commit -m "[CI/CD] Update index.html with new images"
+            git push
