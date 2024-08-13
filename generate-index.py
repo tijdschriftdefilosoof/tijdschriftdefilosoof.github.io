@@ -15,7 +15,7 @@ def generate_gallery():
     """
     """
     editions_html = []
-    for i in range(MAX + 1,0,-2):
+    for i in range(MAX + 1,-1, -1):
         pdf_file = f'./pdf/{i}.pdf'
         if os.path.isfile(pdf_file):
             editions_html.append(gallery_item.format(pdf=pdf_file, i=i))
