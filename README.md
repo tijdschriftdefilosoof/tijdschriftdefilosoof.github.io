@@ -1,3 +1,4 @@
+Dit repo host de code voor [de site van het tijdschrift de filosoof](https://tijdschriftdefilosoof.nl).
 # Dit is de readme.md
 Dit is een hele simpele site, er is één html pagina die gegenereerd wordt met een python script `gen-index,py`,
 die pagina verwijst naar een aantal bestanden die ook in dit repository staan. 
